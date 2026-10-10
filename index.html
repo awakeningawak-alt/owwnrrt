@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080808">
+  <title>OneSpxc Studio — Dart Editor</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="#"><span class="mark">O</span><span>OneSpxc <small>STUDIO / DART</small></span></a>
+  <div class="head-actions"><span class="status"><i></i> EDITOR READY</span><label for="fileInput" class="button ghost">Open .dart</label><input id="fileInput" type="file" accept=".dart,.txt" hidden><button id="downloadBtn" class="button yellow">Download .dart</button></div>
+</header>
+<main>
+  <section class="workspace">
+    <div class="editor panel">
+      <div class="panel-title"><div><span class="eyebrow">SOURCE EDITOR</span><h1 id="currentFile">main.dart</h1></div><div class="dots"><i></i><i></i><i></i></div></div>
+      <div class="editor-tools"><span><b class="dart-badge">D</b> lib / <strong id="crumbFile">main.dart</strong></span><div><button id="sampleBtn" class="mini">Load sample</button><button id="resetBtn" class="mini">Undo local edits</button></div></div>
+      <div class="editor-body"><div class="gutter" id="gutter">1</div><textarea id="source" spellcheck="false" aria-label="Dart source editor"></textarea></div>
+      <div class="editor-status"><span><i class="green-dot"></i> Local editing enabled</span><span id="stats">0 lines · 0 chars</span></div>
+    </div>
+    <div class="preview panel">
+      <div class="panel-title"><div><span class="eyebrow">LIVE PREVIEW</span><h2>App preview</h2></div><div class="preview-actions"><span class="tag">HTML DEMO</span><button id="refreshBtn" class="mini">Refresh preview ↻</button></div></div>
+      <div class="preview-banner"><span class="pulse"></span><span id="previewState">Preview uses editable visual controls</span></div>
+      <div class="preview-scroll">
+        <div class="device">
+          <div class="device-screen">
+            <div class="app-header"><div class="app-icon">O</div><div><b id="appName">OneSpxc Tools</b><small id="appTagline">Your tools. One ecosystem.</small></div><span class="head-symbol">⌁</span></div>
+            <div class="hero" id="hero">
+              <div class="hero-text"><span class="eyebrow">WELCOME BACK</span><h3 id="heroTitle">Build something<br><em>extraordinary.</em></h3><p id="heroSubtitle">Explore your tools in one ecosystem.</p><span class="cta" id="heroCta">EXPLORE TOOLS ↗</span></div>
+              <div class="hero-orbit"></div><div class="hero-orbit second"></div><div class="hero-emblem">O<span>+</span></div>
+            </div>
+            <div class="section-head"><div><small>WORKSPACE</small><h3 id="sectionTitle">Tool collection</h3></div><span>VIEW ALL ↗</span></div>
+            <div class="cards" id="cards"></div>
+            <div class="bottom-nav"><span class="selected">⌂<small>Home</small></span><span>▦<small>Tools</small></span><span>⌕<small>Search</small></span><span>⚙<small>Settings</small></span><span>↻<small>Update</small></span></div>
+          </div>
+        </div>
+      </div>
+      <div class="notice"><b>!</b><span><strong>Honest preview:</strong> ini preview visual HTML/CSS yang bisa lu edit lewat panel kontrol di bawah. Browser tidak menjalankan Dart mentah sebagai Flutter. Untuk render Flutter asli, perlu project Flutter Web yang dibuild.</span></div>
+    </div>
+  </section>
+
+  <section class="controls panel">
+    <div class="panel-title"><div><span class="eyebrow">QUICK DESIGN CONTROLS</span><h2>Edit preview tanpa ngoding ulang</h2></div><button id="applyBtn" class="button yellow">Apply to preview</button></div>
+    <div class="control-grid">
+      <label>App name<input id="editAppName" value="OneSpxc Tools"></label>
+      <label>Tagline<input id="editTagline" value="Your tools. One ecosystem."></label>
+      <label>Banner headline<input id="editHeadline" value="Build something extraordinary."></label>
+      <label>Banner subtitle<input id="editSubtitle" value="Explore your tools in one ecosystem."></label>
+      <label>Button label<input id="editCta" value="EXPLORE TOOLS"></label>
+      <label>Section title<input id="editSection" value="Tool collection"></label>
+      <label>Accent color<input id="editAccent" type="color" value="#ffd400"></label>
+      <label>Background color<input id="editBg" type="color" value="#080808"></label>
+      <label class="wide">Tool cards (satu per baris, format: Nama | deskripsi | status)<textarea id="editTools" rows="4">AI Hub | AI models & chat | COMING SOON
+Image Studio | Visual workspace | COMING SOON
+Developer | Code utilities | COMING SOON
+File & PDF | Document tools | COMING SOON</textarea></label>
+    </div>
+    <p class="control-help">Ubah field lalu klik <b>Apply to preview</b>. Perubahan berlaku ke preview di halaman ini. Tombol Download .dart mengunduh source editor; perubahan desain HTML tidak otomatis mengubah kode Flutter.</p>
+  </section>
+</main>
+<footer><span>ONES P X C <b>STUDIO</b></span><span>EDIT · PREVIEW · ITERATE</span></footer>
+<div id="toast" class="toast" role="status"></div>
+<script src="script.js"></script>
+</body>
+</html>
